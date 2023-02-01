@@ -1,14 +1,15 @@
 // 1. Recuperare elementi INPUT da pagine HTML
 const kmElement = document.getElementById("km");
 const etaElement = document.getElementById("eta");
-const calcolaElement = document.getElementById("calcola");
+const calcolaElement = document.querySelector(".form button.btn-primary");
+const annullaElement = document.querySelector(".form button.btn-danger");
 
-console.log(kmElement,etaElement,calcolaElement);
+console.log(kmElement,etaElement,calcolaElement,annullaElement);
 
 // 2. Recuperare valori degli elementi INPUT quando si interagisce con il pulsante "Calcola"
 
-calcolaElement.addEventListener("click", function() {
 
+calcolaElement.addEventListener("click", function() {
   const km = parseFloat(kmElement.value);
   const eta = etaElement.value;
   console.log("KM: ",km);
@@ -39,6 +40,15 @@ calcolaElement.addEventListener("click", function() {
     break;
 
   }
+
+});
+
+// 6. Interangendo con Pulsante Annulla vengono resettati gli Input
+
+annullaElement.addEventListener("click", function(){
+
+  kmElement.value = "";
+  etaElement.value = "type";
 
 });
 
