@@ -28,15 +28,24 @@ calcolaElement.addEventListener("click", function() {
     case "minorenne":
       prezzoScontato = prezzoBase * 0.8
       console.log("Il prezzo scontato per i minorenni è: ",prezzoScontato);
+      document.querySelector("table td.km").innerHTML = km;
+      document.getElementById("sconto").innerHTML = "20%";
+      document.getElementById("prezzo-finale").innerHTML = prezzoScontato.toFixed(2);
     break;
 
     case "senior":
       prezzoScontato = prezzoBase * 0.6;
       console.log("Il prezzo scontato per i senior è: ",prezzoScontato);
+      document.querySelector("table td.km").innerHTML = km;
+      document.getElementById("sconto").innerHTML = "40%";
+      document.getElementById("prezzo-finale").innerHTML = prezzoScontato.toFixed(2);
     break;
 
     case "intero":
       console.log("Il prezzo intero del tuo biglietto è: ",prezzoBase);
+      document.querySelector("table td.km").innerHTML = km;
+      document.getElementById("sconto").innerHTML = "NO";
+      document.getElementById("prezzo-finale").innerHTML = prezzoBase.toFixed(2);
     break;
 
   }
@@ -49,6 +58,12 @@ annullaElement.addEventListener("click", function(){
 
   kmElement.value = "";
   etaElement.value = "type";
+
+  document.querySelector("table td.km").innerHTML = "KM";
+  document.getElementById("sconto").innerHTML = "Sconto";
+  document.getElementById("prezzo-finale").innerHTML = "Prezzo Finale"
+
+
 
 });
 

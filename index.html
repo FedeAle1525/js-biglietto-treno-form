@@ -11,28 +11,69 @@
   
   <main>
 
+    <h1 class="text-center pt-3">Calcola il prezzo del tuo Biglietto</h1>
+
     <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-3">
 
-      <h1 class="text-center pt-3">Calcola il prezzo del tuo Biglietto</h1>
+          <!-- Inizio Form -->
+          <div class="form pt-3">
+            <div class="mb-3">
+              <label class="form-label">Kilometri da percorrere</label>
+              <input type="number" class="form-control" id="km" placeholder="Inserisci un numero">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tipologia</label>
+              <select class="form-select" id="eta">
+                <option value="type" selected>Seleziona la tipologia</option>
+                <option value="minorenne">Ridotto Minorenni</option>
+                <option value="intero">Intero</option>
+                <option value="senior">Ridotto Senior (> 65)</option>
+              </select>
+            </div>
+            <div class="buttons d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary" id="calcola">Calcola</button>
+              <button type="submit" class="btn btn-danger" id="annulla">Annulla</button>
+            </div>
+          </div>
+          <!-- Fine Form -->
 
-      <div class="form pt-3">
-        <div class="mb-3">
-          <label class="form-label">Kilometri da percorrere</label>
-          <input type="number" class="form-control" id="km" placeholder="Inserisci un numero">
         </div>
-        <div class="mb-3">
-          <label class="form-label">Tipologia</label>
-          <select class="form-select" id="eta">
-            <option value="type" selected>Seleziona la tipologia</option>
-            <option value="minorenne">Ridotto Minorenni</option>
-            <option value="intero">Intero</option>
-            <option value="senior">Ridotto Senior (> 65)</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary" id="calcola">Calcola</button>
-        <button type="submit" class="btn btn-danger" id="annulla">Annulla</button>
       </div>
+    </div>
 
+    <h1 class="text-center pt-5">Il tuo Biglietto</h1>
+
+    <div class="container pt-3">
+      <div class="row">
+        <div class="col">
+
+          <table class="table text-center ">
+            <thead class="table-danger">
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">KM</th>
+                <th scope="col">Prezzo Base</th>
+                <th scope="col">Sconto</th>
+                <th scope="col">Prezzo Finale</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider table-warning">
+              <tr>
+                <td id="nome">Nome</td>
+                <td id="cognome">Cognome</td>
+                <td class="km">KM</td>
+                <td id="prezzo-base">Prezzo Base</td>
+                <td id="sconto">Sconto</td>
+                <td id="prezzo-finale">Prezzo Finale</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
     </div>
 
   </main>
