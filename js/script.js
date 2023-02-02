@@ -6,8 +6,7 @@ const annullaElement = document.querySelector(".form button.btn-danger");
 
 console.log(kmElement,etaElement,calcolaElement,annullaElement);
 
-// 2. Recuperare valori degli elementi INPUT quando si interagisce con il pulsante "Calcola"
-
+// 2. Richiamre evento "click" per pulsante "Calcola"
 
 calcolaElement.addEventListener("click", function() {
   const km = parseFloat(kmElement.value);
@@ -16,11 +15,14 @@ calcolaElement.addEventListener("click", function() {
   console.log("Età: ",eta);
 
   // 3. Calcolare PREZZO BASE (km * 0.21€) del Biglietto
+
+  // Si può dichiarare PREZZO_PER_KM in scope "globale" perchè è costante e non serve dichiararla a ogni click
   const PREZZO_PER_KM = 0.21;
   let prezzoBase = km * PREZZO_PER_KM;
 
   // 4. Calcolare PREZZO SCONTATO in base a Età
   // 5. Stampare PREZZO su File HTML
+  
   let prezzoScontato;
 
   switch(eta){
@@ -72,7 +74,6 @@ annullaElement.addEventListener("click", function(){
   document.getElementById("sconto").innerHTML = "Sconto";
   document.getElementById("prezzo-base").innerHTML = "Prezzo Base";
   document.getElementById("prezzo-finale").innerHTML = "Prezzo Finale"
-
 
 
 });
